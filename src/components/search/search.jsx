@@ -1,8 +1,8 @@
-import React, {useState, useEffect, useCallback} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {fetchData, fetchVideos} from "../../store/api/api-actions";
 import {setChannelId} from "../../store/action-creators";
-import {debounce} from "lodash";
+import { debounce } from 'lodash';
 import SearchList from "../search-list/search-list";
 
 import "./search.scss";
@@ -12,14 +12,14 @@ const Search = () => {
   const [value, setValue] = useState(``);
   const [isOpen, setIsOpen] = useState(false);
   const {data, channelId} = useSelector((state) => state);
-  const debounceFetchData = useCallback(debounce(e => dispatch(fetchData(e)), 300), [])
+  const debounceFetchData = useRef(debounce(e => dispatch(fetchData(e)), 200))
 
   const handleChange = (evt) => {
     evt.preventDefault();
     setValue(evt.target.value);
     setIsOpen(true);
     if (evt.target.value.length) {
-      debounceFetchData(evt.target.value)
+      debounceFetchData.current(evt.target.value)
     }
   }
 
@@ -39,7 +39,7 @@ const Search = () => {
     if (channelId) {
       dispatch(fetchVideos(channelId))
     }
-  }, [channelId])
+  }, [dispatch, channelId])
 
   return (
     <div className="search">

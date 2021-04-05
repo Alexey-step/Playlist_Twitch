@@ -13,7 +13,7 @@ const withError = (Component) => {
       if (isLoading === Status.ERROR) {
         setTimeout(() => dispatch(ActionCreator.setIsLoading(Status.PENDING)), ERROR_TIMEOUT);
       }
-    }, [isLoading]);
+    }, [dispatch, isLoading]);
 
     return (
       <>
