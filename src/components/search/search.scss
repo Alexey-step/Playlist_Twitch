@@ -1,0 +1,25 @@
+@import "../../scss/variables.scss";
+
+.search {
+  width: 60%;
+  padding: 20px;
+  margin: auto auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search__label {
+  margin-right: 10px;
+  color: $basic-white;
+  font-size: 20px;
+}
+
+.search__field {
+  width: 100%;
+}
+
+.search-wrapper {
+  position: relative;
+  margin-right: 10px;
+}

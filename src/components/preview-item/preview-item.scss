@@ -1,0 +1,42 @@
+@import "../../scss/variables.scss";
+
+.preview__item {
+  position: relative;
+  height: 180px;
+}
+
+.preview__group {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $dark-grey-opacity;
+  color: $basic-white;
+  padding: 10px;
+}
+
+.preview__item:hover .preview__group {
+  display: block;
+}
+
+.preview__btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: $basic-white;
+}
+
+.preview__title {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.favorite__svg {
+
+  &--active {
+    fill: $basic-yellow;
+  }
+}

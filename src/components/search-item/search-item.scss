@@ -1,0 +1,17 @@
+@import "../../scss/variables.scss";
+
+.search__item {
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  padding: 5px;
+  border-bottom: 1px solid $light-grey;
+  cursor: pointer;
+  word-break: break-all;
+
+  &:hover {
+    background-color: $grey-light;
+    color: $basic-white;
+  }
+}
