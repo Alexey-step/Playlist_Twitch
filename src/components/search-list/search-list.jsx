@@ -1,7 +1,7 @@
 import React from "react";
 import SearchItem from "../search-item/search-item";
 
-import "./search0list.scss";
+import "./search-list.scss";
 
 const SearchList = ({onListItemClick, data}) => {
 
