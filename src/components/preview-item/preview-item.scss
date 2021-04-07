@@ -26,12 +26,20 @@
   background-color: transparent;
   cursor: pointer;
   color: $basic-white;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .preview__title {
   margin: 0;
   padding: 0;
   margin-bottom: 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .favorite__svg {

@@ -4,14 +4,16 @@ import {fetchData, fetchVideos} from "../../store/api/api-actions";
 import {setChannelId} from "../../store/action-creators";
 import { debounce } from 'lodash';
 import SearchList from "../search-list/search-list";
+import {Status} from "../../const";
 
 import "./search.scss";
 
 const Search = () => {
-  const dispatch = useDispatch();
   const [value, setValue] = useState(``);
   const [isOpen, setIsOpen] = useState(false);
-  const {data, channelId} = useSelector((state) => state);
+  const {data, channelId, isLoading} = useSelector((state) => state);
+  const dispatch = useDispatch();
+
   const debounceFetchData = useRef(debounce(e => dispatch(fetchData(e)), 200))
 
   const handleChange = (evt) => {
@@ -50,7 +52,7 @@ const Search = () => {
           isOpen && <SearchList data={data} onListItemClick={handleList}/>
         }
       </div>
-      <button className="search__btn" onClick={handleSearch}>Search</button>
+      <button className="search__btn" onClick={handleSearch}>{isLoading === Status.LOAD ? `Searching` : `Search`}</button>
     </div>
   )
 }
