@@ -17,7 +17,7 @@ const PreviewItem = ({video}) => {
 
   return(
     <li className="preview__item">
-      <img className="preview__img" src={preview.medium} alt="" />
+      <img className="preview__img" src={preview.medium} alt="Channel video" />
       <div className="preview__group">
         <a className="preview__link" href={url} rel="noopener noreferrer" target="_blank">
           <h3 className="preview__title">{title}</h3>
