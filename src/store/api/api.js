@@ -8,8 +8,8 @@ export const createAPI = () => {
     baseURL: URL,
     timeout: REQUEST_TIMEOUT,
     headers: {
-      'Client-ID': `enlxqhs0jb0du52vj0fzmljst09cf8`,
-      'Authorization': `Bearer pku5ibszmnv29talzc9f3kt1dgobr4`,
+      'client-ID': `enlxqhs0jb0du52vj0fzmljst09cf8`,
+      'Authorization': `Bearer srrjo7qy2e1jk1bxpdjuplciah7rzr`,
       'Accept': `application/vnd.twitchtv.v5+json`
     }
   })
